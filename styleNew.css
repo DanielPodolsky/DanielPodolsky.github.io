@@ -8,6 +8,7 @@
     font-family: "Urbanist", sans-serif;
 }
 
+
 /* Variables */
 :root {
     --border: #545454;
@@ -17,10 +18,10 @@
     --white-color: #fff;
     --width-banner: 95%;
     --width-main: 90%;
-    --gap-banner: 15px;
-    --gap-navbar: 25px;
-    --padding-mid: 5px;
-    --padding-large: 15px;
+    --gap-banner: 0.9375rem;
+    --gap-navbar: 1.5625rem;
+    --padding-mid: 0.3125rem;
+    --padding-large: 0.9375rem;
     --background-btn-purple: #703BF7;
     --light-gray: #999;
 }
@@ -29,6 +30,12 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -50,7 +57,7 @@ img {
 }
 
 .gray {
-    color: var(--border);
+    color: var(--light-gray);
 }
 
 .hidden {
@@ -58,8 +65,8 @@ img {
 }
 
 button {
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.625rem;
     background-color: var(--hero-background);
     color: var(--white-color);
     padding: var(--padding-large);
@@ -68,6 +75,7 @@ button {
 
 .hamburger-btn {
     display: none;
+    padding: 0;
 }
 
 .hamburger-clicked {
@@ -90,7 +98,7 @@ button {
 /* Header, Banner and Nav */
 
 header {
-    border: 2px solid black;
+    border: 0.125rem solid black;
 }
 
 .header-top {
@@ -98,20 +106,20 @@ header {
     background-size: cover;  /* This ensures the image covers the entire element */
     background-position: center;  /* This centers the background image */
     background-repeat: no-repeat;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 0.0625rem solid var(--border);
 }
 .banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-mid) 100px;
+    padding: var(--padding-mid) 6.25rem;
     /* width, margin must come together! (otherwise its just broken) */
     background: none;
 }
 
 
 .banner-empty {
-    width: 55px;
+    width: 3.4375rem;
 }
 
 .banner-main {
@@ -137,12 +145,14 @@ header {
 
 .container {
     position: relative;
-    top: 45px;
+    top: 2.8125rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 
 .navbar-container {
-    padding: var(--padding-mid) 100px;
+    padding: var(--padding-mid) 6.25rem;
     max-width: auto;
 }
 
@@ -150,7 +160,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0.9375rem 0;
 }
 
 .nav-items {
@@ -165,33 +175,33 @@ header {
     color: var(--white-color);
     cursor:pointer;
     position:relative;
-    padding:10px 20px;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
+    padding:0.625rem 1.25rem;
+    border-top-right-radius:0.625rem;
+    border-bottom-left-radius:0.625rem;
     transition:all 1s;
     &:after,&:before {
     content:" ";
-    width:10px;
-    height:10px;
+    width:0.625rem;
+    height:0.625rem;
     position:absolute;
-    border :0px solid var(--hero-background);
+    border :0rem solid var(--hero-background);
     transition:all 1s;
     }
     &:after{
-        top:-1px;
-        left:-1px;
-        border-top:5px solid var(--hero-background);
-        border-left:5px solid var(--hero-background);
+        top:-0.0625rem;
+        left:-0.0625rem;
+        border-top:0.3125rem solid var(--hero-background);
+        border-left:0.3125rem solid var(--hero-background);
     }
     &:before{
-        bottom:-1px;
-        right:-1px;
-        border-bottom:5px solid var(--hero-background);
-        border-right:5px solid var(--hero-background);
+        bottom:-0.0625rem;
+        right:-0.0625rem;
+        border-bottom:0.3125rem solid var(--hero-background);
+        border-right:0.3125rem solid var(--hero-background);
     }
     &:hover{
-        border-top-right-radius:0px;
-        border-bottom-left-radius:0px;
+        border-top-right-radius:0rem;
+        border-bottom-left-radius:0rem;
         background:rgba(0,0,0,1);
         &:before,&:after{
         width:100%;
@@ -202,8 +212,8 @@ header {
 }
 
 .nav-items li a:hover {
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.625rem;
     background-color: var(--hero-background);
     color: var(--white-color);
     padding: var(--padding-large);
@@ -221,7 +231,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% - 123px));
+    transform: translate(-50%, calc(-50% - 7.6875rem));
     
 }
 
@@ -237,21 +247,21 @@ header {
 }
 
 .hero-main-left-container {
-    padding: 100px;
+    padding: 6.25rem;
     position: relative;
 }
 
 .hero-top-title {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     color: rgba(255, 255, 255, 0.85);
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: 500;
 }
 
 .hero-top-paragraph {
     color: var(--light-gray);
-    margin-bottom: 30px;
-    font-size: 0.9063rem;
+    margin-bottom: 1.875rem;
+    font-size: 14.5008px;
 }
 
 .hero-mid-buttons {
@@ -266,20 +276,20 @@ header {
 .hero-mid-stats {
     display: flex;
     gap: var(--gap-navbar);
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 
 .hero-mid-stat {
     padding: var(--padding-large);
     background-color: var(--main-background);
-    border-radius: 10px;
-    border: 1px solid #313030;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid #313030;
 }
 
 .hero-mid-stat p {
     color: var(--light-gray);
-    margin-top: 15px;
+    margin-top: 0.9375rem;
 }
 
 .hero-mid-stat-container {
@@ -287,26 +297,26 @@ header {
 }
 .hero-mid-titles {
     color: rgba(255, 255, 255, 0.85);
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .hero-content-end {
-    margin: 0 10px;
-    margin-bottom: 25px;
+    margin: 0 0.625rem;
+    margin-bottom: 1.5625rem;
 }
 .hero-end-items {
     display: flex;
-    gap: 10px;
-    margin-top: 25px;
+    gap: 0.625rem;
+    margin-top: 1.5625rem;
     text-align: center;
 }
 
 .hero-end-item {
-    height: 150px;
+    height: 9.375rem;
     width: 25%;
     background-color: var(--main-background);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding: var(--padding-large);
     display: flex;
     align-items: center;
@@ -335,17 +345,17 @@ header {
 .section {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 64px;
+    margin-bottom: 4rem;
 }
 .section-title {
     color: var(--white-color);
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 0.625rem;
+    margin-bottom: 0.9375rem;
 }
 
 .section-description {
     color: var(--light-gray);
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
 }
 
 .property-showcase h3 {
@@ -353,21 +363,21 @@ header {
 }
 
 .property-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
 }
 
 .property-description {
     color: var(--border);
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .property-perks {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 35px;
-    margin-top: 35px;
+    gap: 0.625rem;
+    margin-bottom: 2.1875rem;
+    margin-top: 2.1875rem;
 }
 
 #read-more {
@@ -378,19 +388,19 @@ header {
 
 .property-perk {
     display: flex;
-    gap: 5px;
+    gap: 0.3125rem;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--border);
-    border-radius: 45px;
-    padding: 10px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 2.8125rem;
+    padding: 0.625rem;
     background-color: var(--main-background);
 }
 
 .property {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 35px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.625rem;
+    padding: 2.1875rem;
 }
 
 .perk-description {
@@ -399,7 +409,7 @@ header {
 
 .property-deals-btn {
     background-color: #703BF7;
-    padding: 15px 35px;
+    padding: 0.9375rem 2.1875rem;
     width: 100%;
 }
 
@@ -410,7 +420,7 @@ header {
 }
 
 .property-deals-btn-container {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     width: 100%;
 }
 
@@ -429,26 +439,26 @@ header {
     margin: 0 auto;
     width: 100%;
     display: flex;
-    gap: 15px;
+    gap: 0.9375rem;
 }
 
 hr {
-    margin-bottom: 16px;
-    margin-top: 32px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .all-properties-btn {
-    border: 1px solid var(--border);
-    border-radius: 15px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.9375rem;
     background-color: var(--main-background);
-    padding: 15px 15px;
+    padding: 0.9375rem 0.9375rem;
 }
 
 .properties-pages {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
     color: var(--border);
 }
 
@@ -466,13 +476,13 @@ hr {
 
 .property-prices-title {
     color: var(--border);
-    font-size: 1rem;
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 0.3125rem;
 }
 
 .property-actual-price {
     color: var(--white-color);
-    font-size: 1.2rem;
+    font-size: 19.2px;
 }
 
 .properties-pages img {
@@ -480,45 +490,45 @@ hr {
 }
 
 .review {
-    border: 1px solid var(--border);
-    padding: 35px;
-    border-radius: 15px;
-    margin-bottom: 16px;
+    border: 0.0625rem solid var(--border);
+    padding: 2.1875rem;
+    border-radius: 0.9375rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .review-image {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 .review-title {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .review-description { 
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 .review-reviewers {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .all-reviews-btn {
-    border: 1px solid var(--border);
-    border-radius: 15px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.9375rem;
     background-color: var(--main-background);
-    padding: 15px 15px;
+    padding: 0.9375rem 0.9375rem;
 }
 
 .reviews-pages {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .show-more-reviews {
@@ -529,37 +539,37 @@ hr {
 
 .reviews {
     display: flex;
-    gap: 25px;
+    gap: 1.5625rem;
 }
 
 .freq-questions {
     display: flex;
-    gap: 25px;
+    gap: 1.5625rem;
 }
 .question {
-    border: 1px solid var(--border);
-    padding: 35px;
-    border-radius: 15px;
-    margin-bottom: 16px;
+    border: 0.0625rem solid var(--border);
+    padding: 2.1875rem;
+    border-radius: 0.9375rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .question-title {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .question-description { 
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 .question-read-more-btn {
-    border: 1px solid var(--border);
+    border: 0.0625rem solid var(--border);
     background-color: var(--main-background);
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
 }
 
 .show-more-questions {
@@ -572,14 +582,14 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .all-questions-btn {
-    border: 1px solid var(--border);
-    border-radius: 15px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.9375rem;
     background-color: var(--main-background);
-    padding: 15px 15px;
+    padding: 0.9375rem 0.9375rem;
 }
 
 .container-explore {
@@ -587,8 +597,8 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     background-repeat: no-repeat;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top: 0.0625rem solid var(--border);
+    border-bottom: 0.0625rem solid var(--border);
 }
 
 .explore-title h1{
@@ -596,57 +606,57 @@ hr {
 }
 
 .explore-title {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .explore-title-first {
     display: inline;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 .explore-title-second {
     display: inline;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .explore-description {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     color: var(--light-gray);
 }
 
 .explore-properties-btn {
-    border: 1px solid var(--border);
-    border-radius: 15px;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.9375rem;
     background-color: var(--main-background);
-    padding: 15px 15px;
+    padding: 0.9375rem 0.9375rem;
     width: 100%;
     background-color: #703BF7;
-    margin-top: 16px;
-    margin-bottom: 32px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .explore-properties {
-    width: 150px;
+    width: 9.375rem;
 }
 
 .section-explore {
-    padding-top: 25px;
-    margin-top: 25px;
-    margin-bottom: 16px;
+    padding-top: 1.5625rem;
+    margin-top: 1.5625rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 300px;
+    gap: 18.75rem;
 }
 
 
 footer {
     background-color: var(--hero-background);
-    padding-top: 25px;
+    padding-top: 1.5625rem;
     margin: 0 auto;
-    padding-top: 24px;
+    padding-top: 1.5rem;
     position: relative;
-    top: 80px;
+    top: 5rem;
     color: var(--light-gray);
     width: 100%;
 }
@@ -667,21 +677,21 @@ footer {
 }
 
 .input-container {
-    border: 1px solid var(--border);
-    padding: 5px;
+    border: 0.0625rem solid var(--border);
+    padding: 0.3125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 15px;
-    margin-top: 10px;
-    width: 250px;
+    border-radius: 0.9375rem;
+    margin-top: 0.625rem;
+    width: 15.625rem;
 }
 
 .input-container-left {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 0.3125rem;
 }
 
 .input-container-submit-btn {
@@ -691,22 +701,22 @@ footer {
 
 .footer-links {
     display: flex;
-    gap: 35px;
+    gap: 2.1875rem;
     justify-content: flex-end;
     width: 100%;
 }
 
 .footer-link {
-    width: 100px;
+    width: 6.25rem;
 }
 
 .footer-link-title {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-link-links {
-    font-size: 0.875rem;
+    font-size: 14px;
 }
 
 .links-container {
@@ -716,28 +726,28 @@ footer {
 ul li a {
     color: var(--white-color);
     text-decoration: none;
-    width: 150px;
+    width: 9.375rem;
 }
 
 ul li{
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     list-style-type: none;
-    width: 150px;
+    width: 9.375rem;
 }
 
 .footer-bottom-logos {
-    margin-top: 24px;
+    margin-top: 1.5rem;
     background-image: radial-gradient(circle, #703bf7, #4f37bb, #372e80, #262248, #141414);
     text-align: center;
-    padding: 24px;
+    padding: 1.5rem;
 }
 
 .copyright-section {
-    margin-top: 24px;
+    margin-top: 1.5rem;
 }
 
 .copyright-first {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
 }
 
 .stars {
@@ -747,33 +757,33 @@ ul li{
 /* Media Queries */
 
 /* Laptops, Tablets, etc */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 75rem) {
     .container {
-        top: 30px;
+        top: 1.875rem;
     }
     /* Make the banner's font a little bit smaller */
     .banner {
-        padding: 10px 35px;
+        padding: 0.625rem 2.1875rem;
     }
     .banner-main {
-        font-size: 0.8125rem;
+        font-size: 13px;
     }
     /* Make the button a little bit smaller aswell */
     .banner-close img {
-        width: 20px;
-        height: 20px;
+        width: 1.25rem;
+        height: 1.25rem;
     }
 
     .navbar-container {
-        padding: 5px 15px;
+        padding: 0.3125rem 0.9375rem;
     }
 
     .nav-items li a {
-        font-size: 0.7188rem;
+        font-size: 11.5008px;
     }
 
     .nav-item-contact-btn {
-        padding: 10px 25px;
+        padding: 0.625rem 1.5625rem;
         cursor: pointer;
         transition: all 1s;
     }
@@ -791,24 +801,24 @@ ul li{
 
     /* Hero Section */
     .hero-top-context-logo {
-        right: 0px;
-        width: 100px;
-        height: 100px;
+        right: 0rem;
+        width: 6.25rem;
+        height: 6.25rem;
     }
 
     .hero-main-left-container {
-        padding: 50px;
+        padding: 3.125rem;
         width: 100%;
-        padding: 10px 35px;
+        padding: 0.625rem 2.1875rem;
     }
 
     .hero-top-title {
-        font-size: 2.3rem;
+        font-size: 36.8px;
         font-weight: 500;
     }
 
     .hero-top-paragraph {
-        font-size: 0.8rem;
+        font-size: 12.8px;
         max-width: 80%;
     }
 
@@ -818,41 +828,41 @@ ul li{
 
     .hero-mid-stat p {
         color: var(--border);
-        margin-top: 15px;
-        font-size: 0.8rem;
+        margin-top: 0.9375rem;
+        font-size: 12.8px;
     }
 
     .hero-mid-titles {
         color: rgba(255, 255, 255, 0.85);
-        font-size: 1.2rem;
+        font-size: 19.2px;
         font-weight: bold;
     }
 
     /* Properties Section */
     .property-description {
-        font-size: 0.875rem;
+        font-size: 14px;
     }
 
     .property-prices-title {
-        font-size: 0.875rem;
+        font-size: 14px;
     }
     
     .property-actual-price {
-        font-size: 0.875rem;
+        font-size: 14px;
     }
 
     .property-perk {
-        font-size: 0.875rem;
+        font-size: 14px;
     }
 
     .property-deals-btn {
-        padding: 10px 10px;
+        padding: 0.625rem 0.625rem;
     }
 
 }
 
 /* Phones, etc */
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 60rem) {
 
     /* Remove the empty div and make space-between with the other two */
     .banner-empty {
@@ -860,7 +870,7 @@ ul li{
     }
 
     .banner-main {
-        font-size: 0.6875rem;
+        font-size: 11px;
     }
 
     .nav-items, .nav-item-contact-us {
@@ -871,10 +881,10 @@ ul li{
         display: block;
     }
     
-    .navbar-container {
+/*     .navbar-container {
         width: var(--width-banner);
         margin: 0 auto;
-    }
+    } */
 
     .hamburger-btn {
         border: none;
@@ -890,8 +900,8 @@ ul li{
         width: 100vh;
         z-index: 999; /* To make sure this is in-front of everything */
         background-color: #14141419;
-        backdrop-filter: blur(10px);
-        box-shadow: -10px 0 10px rgba(0,0,0,1);
+        backdrop-filter: blur(0.625rem);
+        box-shadow: -0.625rem 0 0.625rem rgba(0,0,0,1);
         flex-direction: column;
         display: none;
         align-items: center;
@@ -917,13 +927,15 @@ ul li{
     .hero-main-right {
         width: 95%;
         margin: 0 auto;
-        border-radius: 15px;
+        border-radius: 0.9375rem;
     }
 
     .hero-main-left {
         width: 95%;
         margin: 0 auto;
     }
+
+    
 
     .hero-top-context {
         position: relative;
@@ -932,19 +944,20 @@ ul li{
 
     .hero-top-context-logo {
         position: absolute;
-        top: -105px;
-        left: -15px;
+        top: -6.5625rem;
+        left: -0.9375rem;
         z-index: 999;
     }
 
     .hero-main-left-container {
         padding: var(--padding-mid);
-        margin-top: 50px;
+        margin-top: 3.125rem;
         left: 0;
+        width: 100%;
     }
 
     .hero-top-title {
-        font-size: 2rem;
+        font-size: 32px;
         font-weight: 500;
     }
 
@@ -953,28 +966,28 @@ ul li{
     }
 
     .mid-second-button {
-        margin-top: 15px;
+        margin-top: 0.9375rem;
         width: 100%;
     }
 
     .hero-mid-stats {
         text-align: center;
-        padding: 25px;
+        padding: 1.5625rem;
         /* Grid Setup */
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         justify-content: center;
-        gap: 10px;
-        font-size: 0.875rem;
+        gap: 0.625rem;
+        font-size: 14px;
         width: 100%;
     }
 
     .hero-mid-stat {
         background-color: var(--main-background);
-        border: 1px solid var(--border);
-        border-radius: 15px;;
-        padding: 15px;
+        border: 0.0625rem solid var(--border);
+        border-radius: 0.9375rem;;
+        padding: 0.9375rem;
     }
     
     .hero-mid-buttons {
@@ -1000,14 +1013,14 @@ ul li{
     
     .hero-mid-titles {
         color: var(--white-color);
-        font-size: 1.5rem;
+        font-size: 24px;
         text-align: center;
     }
     
     .hero-content-end {
         width: 95%;
         margin: 0 auto;
-        margin-top: 25px;
+        margin-top: 1.5625rem;
     }
     
     .hero-end-titles {
@@ -1015,24 +1028,24 @@ ul li{
     }
     
     .hero-end-items {
-        border: 1px solid var(--border);
-        border-radius: 15px;
-        box-shadow: rgba(0,0,0,0.25) 0px 25px 50px -12px;
+        border: 0.0625rem solid var(--border);
+        border-radius: 0.9375rem;
+        box-shadow: rgba(0,0,0,0.25) 0rem 1.5625rem 3.125rem -0.75rem;
         /* Grid Setup */
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 10px;
-        padding: 25px;
-        font-size: 0.875rem;
-        margin-bottom: 16px;
+        gap: 0.625rem;
+        padding: 1.5625rem;
+        font-size: 14px;
+        margin-bottom: 1rem;
     }
     
     .hero-end-item {
         background-color: var(--main-background);
-        border: 1px solid var(--border);
-        border-radius: 15px;
-        padding: 15px;
+        border: 0.0625rem solid var(--border);
+        border-radius: 0.9375rem;
+        padding: 0.9375rem;
         text-align: center;
         width: 100%;
     }
@@ -1043,24 +1056,24 @@ ul li{
     }
 
     .property-description {
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .property-prices-title {
-        font-size: 1rem;
+        font-size: 16px;
     }
     
     .property-actual-price {
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .property-perk {
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .property-deals-btn {
-        font-size: 1rem;
-        padding: 15px 35px;
+        font-size: 16px;
+        padding: 0.9375rem 2.1875rem;
     }
 
     /* Reviews Section */
@@ -1108,11 +1121,12 @@ ul li{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto auto; 
-        margin-top: 15px;
+        margin-top: 0.9375rem;
     }
     
-    ul li:last-child {
-        border-bottom: 1px solid var(--border);
+    .footer-link-links ul li:last-child {
+        border-bottom: 0.0625rem solid var(--border);
+        width: calc(100% - 20px); /* Adjust 20px as needed */
     }
 
 }
