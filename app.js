@@ -28,21 +28,23 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 // * Read More / Read Less *
-const readMoreFirst = document.querySelector('.read-more');
-const moreParagraphFirst = document.querySelector('.read-more-paragraph');
-const readLessFirst = document.querySelector('.read-less');
+const properties = document.querySelector('.properties');
 
 // Add
-readMoreFirst.addEventListener('click', () => {
-    readMoreFirst.style.display = 'none';
-    moreParagraphFirst.style.display = 'inline';
-    readLessFirst.style.display = 'inline';
+properties.addEventListener('click', e => {
+    if (e.target.className === 'read-more') {
+        e.target.style.display = 'none';
+        e.target.parentNode.querySelector('.read-more-paragraph').style.display = 'inline';
+        e.target.parentNode.querySelector('.read-less').style.display = 'inline';
+    }
 });
 
-readLessFirst.addEventListener('click', () => {
-    readMoreFirst.style.display = 'inline';
-    moreParagraphFirst.style.display = 'none';
-    readLessFirst.style.display = 'none';
+properties.addEventListener('click', e => {
+    if (e.target.className === 'read-less') {
+        e.target.style.display = 'none';
+        e.target.parentNode.querySelector('.read-more-paragraph').style.display = 'none';
+        e.target.parentNode.querySelector('.read-more').style.display = 'inline';
+    }
 });
 
 /* Change Properties */
