@@ -2,3 +2,5 @@
 Practicing my HTML, CSS and JS skills
 
 Currently a responsive website that mimics Estatein's.
+
+Visit: https://danielpodolsky.github.io/
